@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>과제 글쓰기</title>
+    <style>
+        body {
+            font-family: 'Noto Sans KR', sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            padding: 20px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        li h2 {
+            color: #5a5a5a;
+            margin: 0 0 10px 0;
+        }
+        li p {
+            color: #666;
+            margin: 5px 0;
+        }
+        li a {
+            display: inline-block;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+        li a:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>쓰기 목록</h1>
+    <ul>
+        {% for todo in todos %}
+            <li>
+                <h2>{{ todo.title }}</h2>
+                <p>{{ todo.description }}</p>
+                <p>완료 여부: {% if todo.complete %} 완료됨 {% else %} 미완료 {% endif %}</p>
+                <a href="/todos/{{todo.id}}">글쓰기</a>
+                <a href="/watchall/{{todo.id}}">다른 친구 글 보기</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

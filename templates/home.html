@@ -1,0 +1,190 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card text-center">
+        <div class="card-header">
+            선생님 화면입니다.
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">글쓰기과제 생성!</h5>
+            <p class="card-text">학생에게 내줄 글쓰기 과제 생성</p>
+
+            <table class="table table-hover">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">제목</th>
+                    <th scope="col">옵션</th>
+
+                </tr>
+                </thead>
+                <tbody>
+
+                {% for todo in todos %}
+                {% if todo.complete == False %}
+                <tr class="pointer">
+
+                    <td>{{loop.index}}</td>
+                    <td>{{todo.title}}</td>
+                    <td>
+                        <button onclick="window.location.href='complete/{{todo.id}}'"
+                                type="button" class="btn btn-success">진행</button>
+                        <button onclick="window.location.href='edit-todo/{{todo.id}}'"
+                                type="button" class="btn btn-info">
+                            수정
+                        </button>
+                    </td>
+                </tr>
+
+                {% else %}
+                <tr class="pointer alert alert-success">
+
+                    <td>{{loop.index}}</td>
+                    <td class="strike-through-td">{{todo.title}}</td>
+                    <td>
+                        <button onclick="window.location.href='complete/{{todo.id}}'"
+                                type="button" class="btn btn-success">완료
+                        </button>
+                        <button onclick="window.location.href='edit-todo/{{todo.id}}'"
+                                type="button" class="btn btn-info">
+                            수정
+                        </button>
+                    </td>
+                </tr>
+
+                {% endif %}
+                {% endfor %}
+
+                </tbody>
+            </table>
+
+            <a href="add-todo" class="btn btn-primary">새로운 과제 생성!</a>
+        </div>
+    </div>
+</div>
+
+<style>
+.nav-link, .logout-link {
+    color: #007bff; /* 링크 색상 */
+    background-color: transparent;
+    padding: 8px 12px; /* 내부 여백 */
+    border-radius: 5px; /* 둥근 모서리 */
+    font-weight: 600; /* 글자 굵기 */
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out; /* 색상 변화 애니메이션 */
+    text-decoration: none; /* 밑줄 제거 */
+}
+
+.nav-link:hover, .logout-link:hover {
+    color: #0056b3; /* 호버 시 색상 변경 */
+    background-color: #e7f5ff; /* 호버 시 배경색 변경 */
+    text-decoration: none; /* 호버 시 밑줄 제거 */
+}
+
+/* 홈과 로그아웃 링크를 포함하는 컨테이너 스타일 (예시) */
+.navbar {
+    padding: 10px 0; /* 상단 및 하단 여백 */
+    background-color: #f8f9fa; /* 배경색 */
+    border-bottom: 1px solid #e9ecef; /* 하단 테두리 */
+}
+body {
+    font-family: 'Noto Sans KR', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.container {
+    max-width: 800px;
+    margin: 40px auto;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: none;
+}
+
+.card-header, .card-footer {
+    background-color: #4CAF50; /* 녹색 배경색 */
+    color: #ffffff; /* 흰색 글자색 */
+    font-size: 20px; /* 글자 크기 */
+    font-weight: bold; /* 글자 굵기 */
+    padding: 15px; /* 내부 여백 */
+    border-radius: 10px 10px 0 0; /* 둥근 테두리 */
+}
+
+.card-body {
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+/* 테이블 스타일 */
+.table {
+    border-collapse: separate;
+    border-spacing: 0 15px; /* 행 사이의 간격 조정 */
+    width: 100%;
+}
+
+.table thead th {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px;
+    border-bottom: none;
+}
+
+.table tbody tr {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.table tbody tr td {
+    padding: 15px;
+    border-top: solid 2px #f5f5f5;
+}
+
+/* 버튼 스타일 */
+.btn {
+    border: none;
+    padding: 8px 12px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-success {
+    background-color: #28a745;
+    color: #ffffff;
+}
+
+.btn-info {
+    background-color: #17a2b8;
+    color: #ffffff;
+}
+
+.btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+}
+
+.btn-success:hover, .btn-info:hover, .btn-primary:hover {
+    opacity: 0.8;
+}
+
+/* 새로운 과제 생성 버튼 스타일 */
+.btn-primary {
+    margin-top: 20px; /* 버튼 상단 여백 */
+    padding: 10px 20px; /* 내부 여백 증가 */
+    font-weight: bold; /* 글자 굵기 */
+    letter-spacing: 1px; /* 글자 간격 */
+}
+
+/* 링크 스타일 조정 */
+.card-footer a {
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.card-footer a:hover {
+    text-decoration: underline;
+}
+
+
+</style>

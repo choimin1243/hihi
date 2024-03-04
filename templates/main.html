@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>쓰기 프로그램</title>
+</head>
+<body>
+    <div class="container">
+        <p>AI 쓰기 프로그램</p>
+        <a href="/auth/" class="pretty-button primary-button">교사용</a>
+        <a href="/students/" class="pretty-button secondary-button">학생용</a>
+    </div>
+</body>
+</html>
+
+
+
+
+<style>
+/* 공통 스타일 */
+.pretty-button {
+    padding: 30px 30px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+    display: block;
+    margin: 100px auto 0; /* 위쪽 여백 추가 및 아래 여백 제거 */
+    width: 150px; /* 버튼 너비 조정 */
+}
+
+/* 기본 버튼 스타일 */
+.secondary-button {
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none; /* 밑줄 제거 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+.primary-button {
+    background-color: #3498db;
+    color: #fff;
+    text-decoration: none; /* 밑줄 제거 */
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    align-items: center; /* 세로 중앙 정렬 */
+}
+
+
+
+
+
+
+
+/* 보조 버튼 스타일 */
+.secondary-button {
+    background-color: #e74c3c;
+    color: #fff;
+}
+
+/* 버튼에 호버 효과 추가 */
+.pretty-button:hover {
+    background-color: #2980b9;
+    color: #fff;
+}
+
+/* AI 쓰기 프로그램 텍스트 스타일 */
+.container p {
+    font-size: 24px; /* 글꼴 크기 조정 */
+    font-weight: bold; /* 굵은 글꼴 적용 */
+    color: #333; /* 텍스트 색상 변경 */
+    margin: 20px auto; /* 중앙 정렬 및 여백 추가 */
+    text-align: center; /* 가운데 정렬 */
+}
+
+</style>

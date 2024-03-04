@@ -1,0 +1,109 @@
+{% include 'layout.html' %}
+
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            쓰기 테마설정
+        </div>
+        <div class="card-body">
+            <form method="POST">
+                <div class="form-group">
+                    <label>과제</label>
+                    <input type="text" class="form-control" name="title" required>
+                </div>
+                <div class="form-group">
+                    <label for="description">어떤 것을 써야하나요?</label>
+                    <textarea class="form-control" id="description" rows="3" name="description" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">글쓰기 생성하기</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        font-family: 'Noto Sans KR', sans-serif;
+        background-color: #f0f4f8; /* 밝은 그레이 배경 */
+        color: #333;
+        line-height: 1.6; /* 줄간격 조정 */
+    }
+
+    .container {
+        max-width: 700px;
+        margin: 50px auto;
+        padding: 20px;
+    }
+
+    .card {
+        background-color: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        border: none;
+    }
+
+    .card-header {
+        background-color: #5C7AEA; /* 밝은 파란색 */
+        color: #ffffff;
+        font-size: 24px;
+        font-weight: 700;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        padding: 20px;
+    }
+
+    .card-body {
+        padding: 20px 40px;
+    }
+
+    .form-group {
+        margin-bottom: 25px;
+    }
+
+    .form-control {
+        font-size: 14px;
+        border-radius: 5px;
+        border: 1px solid #ced4da;
+        padding: 10px;
+    }
+
+    textarea.form-control {
+        height: auto; /* 텍스트 영역의 높이 조정 */
+    }
+
+    .btn-primary {
+        background-color: #4C9AFF; /* 밝은 파란색 */
+        border-color: #4C9AFF;
+        font-size: 16px;
+        font-weight: 600;
+        padding: 10px 30px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+
+    .btn-primary:hover {
+        background-color: #3a8bf0; /* 호버 시 색상 약간 어둡게 */
+        border-color: #3a8bf0;
+    }
+
+    /* 필수 필드를 위한 스타일 */
+    .form-control:required:focus {
+        border-color: #4C9AFF;
+        box-shadow: 0 0 0 0.2rem rgba(76, 154, 255, 0.25);
+    }
+
+    .form-group {
+        display: flex; /* Flexbox 레이아웃 활성화 */
+        align-items: center; /* 세로 중앙 정렬 */
+        justify-content: space-between; /* 요소 사이에 공간 동등 배분 */
+    }
+
+    .form-group label {
+        flex-basis: 20%; /* 레이블 너비를 전체의 20%로 설정 */
+        margin-right: 20px; /* 레이블과 텍스트 영역 사이의 간격 */
+    }
+
+    .form-group .form-control {
+        flex-grow: 1; /* 남은 공간을 텍스트 영역이 채우도록 설정 */
+    }
+</style>
